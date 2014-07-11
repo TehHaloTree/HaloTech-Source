@@ -3,7 +3,7 @@ package com.TehHaloTree.halotechmod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item;
 
 import com.TehHaloTree.halotechmod.blocks.AdvancedPlateBender;
 import com.TehHaloTree.halotechmod.blocks.CitrineOre;
@@ -14,6 +14,14 @@ import com.TehHaloTree.halotechmod.blocks.FluoriteOre;
 import com.TehHaloTree.halotechmod.blocks.FluxOre;
 import com.TehHaloTree.halotechmod.blocks.MysteriousOre;
 import com.TehHaloTree.halotechmod.blocks.RadiumOre;
+import com.TehHaloTree.halotechmod.items.CitrineDust;
+import com.TehHaloTree.halotechmod.items.DarkDust;
+import com.TehHaloTree.halotechmod.items.Element115Dust;
+import com.TehHaloTree.halotechmod.items.EridiumDust;
+import com.TehHaloTree.halotechmod.items.FluoriteDust;
+import com.TehHaloTree.halotechmod.items.FluxDust;
+import com.TehHaloTree.halotechmod.items.MysteriousDust;
+import com.TehHaloTree.halotechmod.items.RadiumDust;
 import com.TehHaloTree.halotechmod.lib.References;
 import com.TehHaloTree.halotechmod.proxy.ProxyCommon;
 import com.TehHaloTree.halotechmod.tile.TileEntityAdvancedPlateBender;
@@ -65,6 +73,14 @@ public class halotech {
 	
 	//Items
 		//Dusts
+	public static Item EridiumDust;
+	public static Item CitrineDust;
+	public static Item RadiumDust;
+	public static Item FluoriteDust;
+	public static Item FluxDust;
+	public static Item DarkDust;
+	public static Item Element115Dust;
+	public static Item MysteriousDust;
 
 	
 	
@@ -105,6 +121,31 @@ public class halotech {
 		LanguageRegistry.addName(AdvancedPlateBender, "Advanced Plate Bender");
 		
 		//Item Registry
+			//Dusts
+		EridiumDust = new EridiumDust(5000).setUnlocalizedName("EridiumDust");
+		GameRegistry.registerItem(EridiumDust, modid+EridiumDust.getUnlocalizedName().substring(5));
+		LanguageRegistry.addName(EridiumDust, "Eridium Dust");
+		CitrineDust = new CitrineDust(5001).setUnlocalizedName("CitrineDust");
+		GameRegistry.registerItem(CitrineDust, modid+CitrineDust.getUnlocalizedName().substring(5));
+		LanguageRegistry.addName(CitrineDust, "Citrine Dust");
+		RadiumDust = new RadiumDust(5002).setUnlocalizedName("RadiumDust");
+		GameRegistry.registerItem(RadiumDust, modid+RadiumDust.getUnlocalizedName().substring(5));
+		LanguageRegistry.addName(RadiumDust, "Radium Dust");
+		FluoriteDust = new FluoriteDust(5003).setUnlocalizedName("FluoriteDust");
+		GameRegistry.registerItem(FluoriteDust, modid+FluoriteDust.getUnlocalizedName().substring(5));
+		LanguageRegistry.addName(FluoriteDust, "Fluorite Dust");
+		Element115Dust = new Element115Dust(5004).setUnlocalizedName("Element115Dust");
+		GameRegistry.registerItem(Element115Dust, modid+Element115Dust.getUnlocalizedName().substring(5));
+		LanguageRegistry.addName(Element115Dust, "Element115 Dust");
+		MysteriousDust = new MysteriousDust(5005).setUnlocalizedName("MysteriousDust");
+		GameRegistry.registerItem(MysteriousDust, modid+MysteriousDust.getUnlocalizedName().substring(5));
+		LanguageRegistry.addName(MysteriousDust, "Mysterious Dust");
+		DarkDust = new DarkDust(5006).setUnlocalizedName("DarkDust");
+		GameRegistry.registerItem(DarkDust, modid+DarkDust.getUnlocalizedName().substring(5));
+		LanguageRegistry.addName(DarkDust, "Dark Dust");
+		FluxDust = new FluxDust(5007).setUnlocalizedName("FluxDust");
+		GameRegistry.registerItem(FluxDust, modid+FluxDust.getUnlocalizedName().substring(5));
+		LanguageRegistry.addName(FluxDust, "Flux Dust");
 		
 		//Tile Entities
 		GameRegistry.registerTileEntity(TileEntityAdvancedPlateBender.class, "AdvancedPlateBenderTileEntity");
