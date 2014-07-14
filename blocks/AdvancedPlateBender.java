@@ -23,7 +23,7 @@ public class AdvancedPlateBender extends BlockContainer
 	public AdvancedPlateBender(int id, Material par2Material)
 	{
 		super(id, par2Material);
-		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setCreativeTab(halotech.HaloTechCreativeTab);
 		this.setHardness(3.0F);
 		
 	}

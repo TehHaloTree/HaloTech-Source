@@ -9,9 +9,9 @@ import com.TehHaloTree.halotechmod.halotech;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class Element115Dust extends Item{
+public class FluxIngot extends Item{
 
-	public Element115Dust(int par1) {
+	public FluxIngot(int par1) {
 		super(par1);
 		this.setCreativeTab(halotech.HaloTechCreativeTab);
 	}

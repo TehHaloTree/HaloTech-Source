@@ -13,7 +13,7 @@ public class CitrineDust extends Item{
 
 	public CitrineDust(int par1) {
 		super(par1);
-		this.setCreativeTab(CreativeTabs.tabMaterials);
+		this.setCreativeTab(halotech.HaloTechCreativeTab);
 	}
 	
 	@SideOnly(Side.CLIENT) 

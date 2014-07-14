@@ -14,7 +14,7 @@ public class CitrineOre extends Block
 	public CitrineOre(int id, Material par2Material)
 	{
 		super(id, par2Material);
-		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setCreativeTab(halotech.HaloTechCreativeTab);
 	}
 	 @SideOnly(Side.CLIENT)        
 	 public void registerIcons(IconRegister par1IconRegister)     
