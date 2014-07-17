@@ -13,7 +13,7 @@ public class Element115Dust extends Item{
 
 	public Element115Dust(int par1) {
 		super(par1);
-		this.setCreativeTab(halotech.HaloTechCreativeTab);
+		setCreativeTab(halotech.HaloTechCreativeTab);
 	}
 	
 	@SideOnly(Side.CLIENT) 

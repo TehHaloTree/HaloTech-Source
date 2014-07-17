@@ -13,7 +13,7 @@ public class DarkDust extends Item{
 
 	public DarkDust(int par1) {
 		super(par1);
-		this.setCreativeTab(halotech.HaloTechCreativeTab);
+		setCreativeTab(halotech.HaloTechCreativeTab);
 	}
 	
 	@SideOnly(Side.CLIENT) 

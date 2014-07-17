@@ -13,7 +13,7 @@ public class RadiumDust extends Item{
 
 	public RadiumDust(int par1) {
 		super(par1);
-		this.setCreativeTab(halotech.HaloTechCreativeTab);
+		setCreativeTab(halotech.HaloTechCreativeTab);
 	}
 	
 	@SideOnly(Side.CLIENT) 
