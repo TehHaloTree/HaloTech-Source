@@ -1,6 +1,7 @@
 package com.TehHaloTree.halotechmod.blocks;
 
 import java.util.List;
+import java.util.Random;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -82,6 +83,29 @@ public class AdvancedPlateBender extends BlockContainer
 	             
 	             
 	       
+	}
+	
+	public int idDropped(int par1, Random random, int par3){
+		return halotech.AdvancedPlateBender.blockID;
+	}
+	
+	public void onBlockAdded(World world, int x, int y, int z){
+		super.onBlockAdded(world, x, y, z);
+		this.setDefaultDirection(world, x, y, z);
+	}
+	
+	private void setDefaultDirection(World world, int x, int y, int z){
+		if(!world.isRemote){
+			int l = world.getBlockId(x, y, z - 1);
+			int il = world.getBlockId(x, y, z + 1);
+			int jl = world.getBlockId(x - 1, y, z);
+			int kl = world.getBlockId(x + 1, y, z);
+			byte b0 = 3;
+			
+
+		
+		world.setBlockMetadataWithNotify(x, y, z, b0, 2);
+		}
 	}
 
 	

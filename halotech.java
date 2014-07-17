@@ -1,12 +1,12 @@
 package com.TehHaloTree.halotechmod;
 
 import gregtechmod.api.GregTech_API;
-import gregtechmod.api.enums.GT_Items;
 import ic2.api.item.Items;
 import ic2.api.recipe.RecipeInputItemStack;
 import ic2.api.recipe.Recipes;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -15,6 +15,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.TehHaloTree.halotechmod.blocks.AdvancedPlateBender;
 import com.TehHaloTree.halotechmod.blocks.CitrineOre;
@@ -303,23 +304,25 @@ public class halotech {
 		
 		//Tile Entities~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		GameRegistry.registerTileEntity(TileEntityAdvancedPlateBender.class, "AdvancedPlateBenderTileEntity");
+		//Item Calling~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		ItemStack iridiumPlate = Items.getItem("iridiumPlate");
+		ArrayList<ItemStack> gearElectrum = OreDictionary.getOres("gearElectrum");
+		ItemStack lapotroncrystal = Items.getItem("lapotronCrystal");
+		ArrayList<ItemStack> circuitElite = OreDictionary.getOres("circuitElite");
+		ArrayList<ItemStack> platebender = OreDictionary.getOres("bender");	
 		//Recipes~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		//Shapless
 		GameRegistry.addShapelessRecipe(new ItemStack(CitrineIngot), new Object[]{
 			new ItemStack(RadiumIngot)
 		});
-		ItemStack iridiumPlate = Items.getItem("iridiumPlate");
-		ItemStack datacontrolcircuit = GT_Items.getItem(GT_Items.Circuit_Data);
-		ItemStack lapotroncrystal = Items.getItem("lapotronCrystal");
-		ItemStack platebender = GregTech_API.getGregTechBlock(1, 1, bender);
-		ItemStack electrumgear = GregTech_API.getGregTechItem(aIndex, aAmount, aMeta)
-		
-		
-		GameRegistry.addRecipe(new ItemStack(AdvancedPlateBender), new Object[]{
+		//Shaped
+		GameRegistry.addRecipe(new ItemStack(AdvancedPlateBender, 1), new Object[]{
 			"zaz",
 			"yxy",
 			"zbz",
-			'y', iridiumPlate, 'a', datacontrolcircuit, 'b', lapotroncrystal, 'z', electrumgear , 'x', platebender
+			'y', iridiumPlate, 'a', circuitElite, 'b', lapotroncrystal, 'z', gearElectrum , 'x', platebender
 		});
+		//Smelting
 		GameRegistry.addSmelting(CitrineDust.itemID, new ItemStack(CitrineIngot, 1), 0.5F);
 		GameRegistry.addSmelting(RadiumDust.itemID, new ItemStack(RadiumIngot, 1), 0.5F);
 		GameRegistry.addSmelting(Element115Dust.itemID, new ItemStack(Element115Ingot, 1), 0.5F);
@@ -328,7 +331,7 @@ public class halotech {
 		GameRegistry.addSmelting(DarkDust.itemID, new ItemStack(DarkIngot, 1), 0.5F);
 		GameRegistry.addSmelting(FluxDust.itemID, new ItemStack(FluxIngot, 1), 0.5F);
 		GameRegistry.addSmelting(MysteriousDust.itemID, new ItemStack(MysteriousIngot, 1), 0.5F);
-		
+		//Macerator
 		Recipes.macerator.addRecipe(new RecipeInputItemStack(new ItemStack(CitrineOre)), null, new ItemStack(CitrineDust, 2));
 		Recipes.macerator.addRecipe(new RecipeInputItemStack(new ItemStack(RadiumOre)), null, new ItemStack(RadiumDust, 2));
 		Recipes.macerator.addRecipe(new RecipeInputItemStack(new ItemStack(MysteriousOre)), null, new ItemStack(MysteriousDust, 2));
